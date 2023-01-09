@@ -1,9 +1,9 @@
 :root {
-    --color1: #22223B;
-    --color2: #9A8C98;
-    --color3: #C9ADA7;
-    --color4: #22223B;
-    --color5: #F2E9E4;
+    --color1: #666044;
+    --color2: #2c644d;
+    --color3: #c43a3b;
+    --color4: #021110;
+    --color5: #efefea;
   }
 
 
@@ -70,7 +70,7 @@ ul {
 /* The progress bar (scroll indicator) */
 .progress-bar {
     height: 0%;
-    background: var(--color1);
+    background: var(--color4);
     width: 8px;
 }
 
@@ -173,6 +173,17 @@ nav a:hover::before {
     width: 100%;
 }
 
+.about-txt {
+    float: left;
+}
+
+.about-img {
+    width: 25%;
+    height: auto;
+    position: absolute;
+    right: 5%;
+}
+
 .works {
     background-color: var(--color2);
     padding: 5% 5%;
@@ -192,7 +203,7 @@ img {
     height: 100%;
     width: 100%;
     z-index: 1;
-    opacity: 80%;
+    opacity: 100%;
 }
 
 .pic-contain {
@@ -213,6 +224,7 @@ img {
     font-weight: 800;
     font-size: 80px;
     color:var(--color5);
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.72);
   }
 
 ::selection {
