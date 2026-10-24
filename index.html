@@ -1,97 +1,183 @@
-<!DOCTYPE html>
-<html lang="en" class="example" id="home">
-
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial_scale=1.0, user-scalable=no">
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Oswald:wght@200;300;400;500;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <title>KOBRUE02</title>
-  <script defer src="./scroll.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konrad Brüggemann</title>
+<meta name="description" content="Konrad Brüggemann: NLP researcher, PhD student in Montréal from January 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef1f3;
+    --ink: #161a1e;
+    --muted: #5d676f;
+    --rule: #c9d0d5;
+    --accent: #1d4fa3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101418;
+      --ink: #e8ecef;
+      --muted: #8d98a1;
+      --rule: #2a3138;
+      --accent: #7ea6ec;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 "Hanken Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 0.25em; text-decoration-thickness: 1px; transition: text-decoration-color .15s, color .15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  main { max-width: 56rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  .hero { padding: clamp(4rem, 14vh, 9rem) 0 clamp(3rem, 8vh, 5rem); }
+  h1 {
+    margin: 0;
+    font: 400 clamp(3.5rem, 13vw, 9rem)/0.92 "Instrument Serif", Georgia, serif;
+    letter-spacing: -0.025em;
+  }
+  h1 span { display: block; }
+  h1 span + span { font-style: italic; color: var(--accent); }
+  .lede { margin: 2.5rem 0 0; max-width: 34rem; font-size: 1.25rem; line-height: 1.5; }
+  .lede + .lede { margin-top: 1rem; font-size: 1.0625rem; color: var(--muted); }
+
+  section { padding: 0 0 clamp(3rem, 8vh, 5rem); }
+  h2 { margin: 0 0 .5rem; font: 500 .95rem/1.4 "Hanken Grotesk", sans-serif; color: var(--muted); }
+
+  .row {
+    display: grid; grid-template-columns: 1fr auto; gap: .5rem 2rem;
+    padding: 1.5rem 0; border-top: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: 1px solid var(--rule); }
+  .row h3 { margin: 0; font: 400 1.65rem/1.2 "Instrument Serif", Georgia, serif; max-width: 34rem; }
+  .row p { margin: .4rem 0 0; color: var(--muted); max-width: 34rem; font-size: 1rem; }
+  .links { display: flex; gap: 1.25rem; align-items: flex-start; padding-top: .35rem; white-space: nowrap; }
+  .year { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  footer { padding: 0 0 4rem; color: var(--muted); font-size: .95rem; display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: space-between; }
+
+  .hero > * { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .hero .lede { animation-delay: .12s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @media (prefers-reduced-motion: reduce) { .hero > * { animation: none; } a { transition: none; } }
+
+  @media (max-width: 40rem) {
+    .row { grid-template-columns: 1fr; }
+    .links { padding-top: .25rem; }
+  }
+</style>
 </head>
-
 <body>
+<main>
+  <header class="hero">
+    <h1><span>Konrad</span><span>Brüggemann</span></h1>
+    <p class="lede">I work on natural language processing, from author profiling to humor generation. In January 2027 I start my PhD at the <a href="https://www.umontreal.ca/">Université de Montréal</a> and <a href="https://mila.quebec/">Mila</a>, supervised by <a href="https://aylart.github.io/">Ayla Rigouts Terryn</a>.</p>
+    <p class="lede">I've built in-car voice assistants, LLM chatbots and RAG systems, and I currently automate internal processes with AI at LIQID in Berlin.</p>
+  </header>
 
-    <header>
-        <div class="container">
-            <div class="logo"><a href="#home">KOBRUE02</a></div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <section aria-labelledby="work">
+    <h2 id="work">Publications</h2>
 
+    <article class="row">
+      <div>
+        <h3>Team TüLK at SemEval-2026 Task 1: Humor Generation with Qwen and Group Relative Policy Optimization</h3>
+        <p>With Luting Hou. Proceedings of the 20th International Workshop on Semantic Evaluation.</p>
+      </div>
+      <div class="links">
+        <span class="year">2026</span>
+        <a href="https://aclanthology.org/2026.semeval-1.67/">Paper</a>
+        <a href="https://github.com/cicl-iscl/semeval-2026-mwahaha">Code</a>
+      </div>
+    </article>
 
-    <div class="header">
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
-    </div>
+    <article class="row">
+      <div>
+        <h3>BERTective</h3>
+        <p>German author profiling. Predicts age, gender, regional dialect and education level from text, combining linguistic features with deep learning. The final report is in German.</p>
+      </div>
+      <div class="links">
+        <a href="assets/BERTective_Abschlussbericht.pdf">Report (PDF)</a>
+        <a href="https://github.com/kobrue02/BERTective">Code</a>
+      </div>
+    </article>
+  </section>
 
-    <div class="pic-contain">
-        <img src="background4.jpg">
-        <div class="centered">Konrad Brüggemann</div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    </div>
+  <section aria-labelledby="exp">
+    <h2 id="exp">Experience</h2>
 
-    <div class="content">
+    <article class="row">
+      <div>
+        <h3>AI &amp; Automation Engineer, LIQID</h3>
+        <p>Part of the Operational Excellence team. Builds AI-native solutions that automate internal and customer-facing processes. Working student, Berlin.</p>
+      </div>
+      <div class="links"><span class="year">Nov 2025 – now</span></div>
+    </article>
 
-            <div class="about" id="about">
-                <div style="text-align: center;"><h1>ABOUT</h1></div>
-                <div class="about-text">
-                    <h1> Who am I? </h1>
-                    My name is Konrad, I'm from Potsdam and I'm 20 years old.<br>
-                    Currently, I am studying Computational Linguistics at the University of Potsdam 
-                    in the fifth semester and am looking to get my Bachelor in 2024. <br>
-                    I am mainly interested in NLP, NLG, sentiment analysis and argument mining and have worked on a few projects in those fields. <br>
-                    If you want to check out some of my programming projects on Github, you can do so here. <br>
-                    You can also find me on LinkedIn. <br>
-                    <h1> What else do I do? </h1>
-                    Besides being into languages and programming, I've also been playing the drums for 15 years, which I now teach as well. <br>
-                    Since 2017, I also practice weighlifting and since 2022 I do Muay Thai. <br>
-                    So, if I'm not attending a lecture or working on a coding project, I am most likely practicing the drums or doing sports! <br>
-                </div>
-            </div>
+    <article class="row">
+      <div>
+        <h3>NLP Engineer, Die Lautmaler</h3>
+        <p>Developed and deployed voice and text virtual assistants. Built vector databases and retrievers for RAG systems. Working student, Berlin.</p>
+      </div>
+      <div class="links"><span class="year">Jul 2024 – Nov 2025</span></div>
+    </article>
 
-            <div class="works" id="works">
-                <div style="text-align: center;"><h1>WORKS</h1></div>
-                <h1>Agariopedia </h1>
-                Agariopedia is a multiplayer online game encyclopedia that is made accessible through an interactive Discord bot 
-                and gets the data from a database I've built with a friend. <br>
-                You can find the source code on my Github profile! <br>
+    <article class="row">
+      <div>
+        <h3>Computational Linguist, NIO</h3>
+        <p>Worked on the NLU team for the NOMI in-car assistant, first as an intern, then as a working student in Berlin. Led data engineering for 50+ skills in three locales (German, English, Norwegian) and managed data vendors and internal resources. Built a data engineering platform to bring NLU support for new skills up to speed, and helped develop a pipeline to improve voice activity detection.</p>
+      </div>
+      <div class="links"><span class="year">Apr 2023 – Jun 2024</span></div>
+    </article>
 
-                <h1>Stock Market Prediction Tool </h1>
-                This project is currently in progress. <br>
-                We are attempting to train a model to predict prices in the stock market based on the sentiment analysis of social media. <br>
-                There is a bit of research on this topic already, like this paper by Pagolu et al. and this paper by Khedr et al., 
-                in which the authors were able to train those prediction models with an accuracy of up to 87%. <br>
-                Currently, the tool has an interface for reddit, twitter, stocktwits, news headlines and 4chan 
-                and performs sentiment analysis on the data scrapped from those. <br>
-                However, we are still working on the model. <br>
+    <article class="row">
+      <div>
+        <h3>Summer of Code, Bundesnachrichtendienst</h3>
+        <p>Sponsored to build experimental author-profiling software: a neural network pipeline that predicts the age, gender, education level and origin of an anonymous author.</p>
+      </div>
+      <div class="links"><span class="year">Jun – Sep 2023</span></div>
+    </article>
+  </section>
 
-                <h1>Gentify </h1>
-                Gentify is a spotify playlist generation tool built in Python using the Spotipy library. <br>
-                The user gets a list of genres to choose from (up to 5) and the script generates a playlist based off those genres. <br>
-                I am still working on this project and looking to improve it and add more features. <br>
-                This is a sample playlist created by the tool. <br>
+  <section aria-labelledby="edu">
+    <h2 id="edu">Education</h2>
 
-                <h1> Lifts4U </h1>
-                Lifts4u is a website that hosts 150+ training programs for advanced weightlifters. <br>
-                The user base is fairly small and averages to 1.000/mo, however this was one of my first projects and I am happy some people still use it.
-            </div>
+    <article class="row">
+      <div>
+        <h3>Eberhard Karls Universität Tübingen</h3>
+        <p>Master in Computational Linguistics.</p>
+      </div>
+    </article>
+    <article class="row">
+      <div>
+        <h3>Universität Potsdam</h3>
+        <p>Bachelor in Computational Linguistics.</p>
+      </div>
+    </article>
+  </section>
 
-            <div class="contact" id="contact">
-                <div style="text-align: center;"><h1>CONTACT</h1></div>
-                Contact me!
-            </div>
-    </div>
+  <footer>
+    <span><a href="https://github.com/kobrue02">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/konradbrg/">LinkedIn</a></span>
+    <span>Montréal, <span id="clock"></span></span>
+  </footer>
+</main>
+
+<script>
+  var fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "America/Toronto", hour: "2-digit", minute: "2-digit" });
+  function tick() {
+    var t = fmt.format(new Date());
+    document.getElementById("clock").textContent = t;
+  }
+  tick(); setInterval(tick, 30000);
+</script>
 </body>
 </html>
